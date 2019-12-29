@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+
+const int DestinationType_Max = 5;
+const int DestinationNumber_Max = 100;
+
+class Coordinate
+{
+private:
+	float x;
+	float y;
+public:
+	Coordinate Nearest (const Coordinate place);
+	
+}
+Coordinate PlaceName[DestinationType_Max][DestinationNumber_Max]{
+	//輸入站名、座標
+}
+
+
+Coordinate Coordinate::Nearest(const Coordinate place){
+	Coordinate temp;
+	int smallest = 100000;
+	for(int i = 0; i < DestinationType_Max; i++){
+		for(int j = 0 ; j < DestinationNumber_Max;j++){
+			if (abs(this->x - place.x) + abs(this->y - place.y) < smallest){
+				temp = PlaceName[i][j];
+			}
+		}
+	}
+	return temp;
+}
+
+
+int main(){
+
+}
